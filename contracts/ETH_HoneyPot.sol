@@ -38,7 +38,7 @@ contract ETH_Giveaway
     
     function withdraw()  public
     {
-        require(msg.sender == owner);
+        require(msg.sender == owner, 'Ownable: caller is not the owner');
         console.log("Owner takes all the money");
         payable(owner).transfer(address(this).balance);
     }
